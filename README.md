@@ -2,6 +2,8 @@
 
 Creates a vagrant box for OpenIndiana.
 
+Use official OpenIndiana download links [Downloads](http://openindiana.org/download/).
+
 Run using `packer build template.json`
 
 Notes:
