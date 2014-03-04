@@ -2,20 +2,16 @@
   "builders": [
     {
       "boot_command": [
-        "18<enter><wait5>",
+        "47<enter><wait5>",
         "7<enter><wait10><wait10><wait10><wait10><wait10>",
         "1<enter><wait10><wait10>",
         "<f2><wait10>",
         "<f2><wait>",
         "<f2><wait>",
-        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><wait>openindiana4vagrant<tab><wait>",
+        "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><wait>openindiana-vagrant<tab><wait>",
         "<f2><wait>",
         "<f2><wait>",
         "<f2><wait>",
-        "vagrant<tab>",
-        "vagrant<tab>",
-        "Vagrant User<tab>",
-        "vagrant<tab>",
         "vagrant<tab>",
         "vagrant<tab>",
         "<f2><wait>",
