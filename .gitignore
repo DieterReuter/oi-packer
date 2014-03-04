@@ -1,3 +1,4 @@
 .swp
 packer_cache
 *.box
+output-virtualbox-iso
