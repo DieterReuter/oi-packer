@@ -1,0 +1,75 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<enter><wait10><wait5>",
+        "1<enter><wait10>",
+        "<wait10>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<bs><bs><bs><bs><bs><bs><bs>openindiana-vagrant",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<f8><wait>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "root<enter><wait><enter><wait5>",
+        "passwd<enter><wait>",
+        "vagrant<enter><wait>",
+        "vagrant<enter><wait>",
+        "ipadm create-if e1000g0<enter><wait>",
+        "ipadm create-addr -T dhcp e1000g0/v4<enter><wait>",
+        "echo 'nameserver 8.8.8.8' > /etc/resolv.conf<enter><wait>",
+        "cp /etc/nsswitch.dns /etc/nsswitch.conf<enter><wait>",
+        "sed -i -e 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config<enter><wait>",
+        "svcadm restart ssh<enter><wait>"
+      ],
+      "boot_wait": "30s",
+      "disk_size": 40960,
+      "guest_os_type": "OpenSolaris_64",
+      "iso_checksum": "0e798f327a6c560544692c299459f446",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://dlc.openindiana.org/isos/151a8/oi-dev-151a8-text-x86.iso",
+      "shutdown_command": "/usr/sbin/shutdown -g 0 -y -i 5",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "type": "virtualbox-iso",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "1024"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "compression_level": 9,
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/postinstall.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+
