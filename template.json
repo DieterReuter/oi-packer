@@ -53,18 +53,9 @@
       "ssh_username": "root",
       "type": "virtualbox-iso",
       "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "1024"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "1"
-        ]
+        [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
+        [ "modifyvm", "{{.Name}}", "--cpus", "1" ],
+		[ "modifyvm", "{{.Name}}", "--vram", "32" ]
       ]
     }
   ],
@@ -77,7 +68,7 @@
   "provisioners": [
     {
       "scripts": [
-        "scripts/postinstall.sh"
+        "scripts/postinstall-test.sh"
       ],
       "type": "shell"
     }
