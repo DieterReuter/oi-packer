@@ -2,3 +2,5 @@
 packer_cache
 *.box
 output-virtualbox-iso
+.vagrant
+*~
