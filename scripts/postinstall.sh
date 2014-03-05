@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "Post-install starting..."
+echo "...running ./postinstall.sh"
+
 echo "Creating Vagrant user 'vagrant'"
 useradd -m -k /etc/skel/ -b /export/home -s /usr/bin/bash vagrant
 passwd -N vagrant
