@@ -1,7 +1,10 @@
 echo "Post-install begin"
 echo "...specific procedure for OpenIndiana"
 
-sleep 3600
+echo "Post-install done"
+echo "...shortcut: no provisioning executed - FOR TEST PURPOSES ONLY"
+echo "...exit, DR"
+
 exit
 
 
