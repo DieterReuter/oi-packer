@@ -55,7 +55,7 @@
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ],
-		[ "modifyvm", "{{.Name}}", "--vram", "32" ]
+        [ "modifyvm", "{{.Name}}", "--vram", "32" ]
       ]
     }
   ],
@@ -68,7 +68,7 @@
   "provisioners": [
     {
       "scripts": [
-        "scripts/postinstall-test.sh"
+        "scripts/postinstall.sh"
       ],
       "type": "shell"
     }
