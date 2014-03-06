@@ -52,6 +52,9 @@ chown vagrant:other /export/home/vagrant/.ssh/authorized_keys
 #sed -i -e "s/PermitRootLogin yes/PermitRootLogin no/" /etc/ssh/sshd_config
 #svcadm restart ssh
 
+# Upgrading OpenIndiana 
+# see http://wiki.openindiana.org/oi/Upgrading+OpenIndiana
+
 # update grub menu to lower timeout to 5 seconds
 echo "Updating Grub boot menu"
 sed -i -e 's/^timeout.*$/timeout 5/' /rpool/boot/grub/menu.lst
