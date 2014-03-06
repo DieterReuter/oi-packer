@@ -3,9 +3,9 @@
     {
       "boot_command": [
         "47<enter><wait5>",
-        "7<enter><wait10><wait10><wait10><wait10><wait10>",
-        "1<enter><wait10><wait10>",
-        "<f2><wait10>",
+        "7<enter><wait10><wait5>",
+        "1<enter><wait5>",
+        "<f2><wait5>",
         "<f2><wait>",
         "<f2><wait>",
         "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><wait>openindiana-vagrant",
@@ -20,20 +20,8 @@
         "<f2><wait>",
         "<wait10><wait10><wait10><wait10><wait10><wait10>",
         "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10>",
         "<f8><wait>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
-        "<wait10><wait10><wait10><wait10><wait10><wait10>",
         "<wait10><wait10><wait10><wait10><wait10><wait10>",
         "root<enter><wait>vagrant<enter><wait5>",
         "ipadm create-if e1000g0<enter><wait>",
@@ -43,7 +31,7 @@
         "sed -i -e 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config<enter><wait>",
         "svcadm restart ssh<enter><wait>"
       ],
-      "boot_wait": "60s",
+      "boot_wait": "25s",
       "disk_size": 40960,
       "guest_os_type": "OpenSolaris_64",
       "iso_checksum": "0e798f327a6c560544692c299459f446",
@@ -57,7 +45,7 @@
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ],
-        [ "modifyvm", "{{.Name}}", "--vram", "32" ]
+        [ "setextradata", "global", "GUI/SuppressMessages", "all" ]
       ]
     }
   ],
