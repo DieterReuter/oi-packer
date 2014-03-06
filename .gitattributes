@@ -4,6 +4,7 @@
 # Force Unix-style line endings on these files
 Vagrantfile text eol=lf
 *.sh eol=lf
+*.d eol=lf
 
 # Force CRLF line endings on these files
 *.bat text eol=crlf
