@@ -57,13 +57,15 @@
       "vboxmanage": [
         [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ],
-        [ "modifyvm", "{{.Name}}", "--vram", "32" ]
+        [ "modifyvm", "{{.Name}}", "--vram", "16" ],
+        [ "setextradata", "global", "GUI/SuppressMessages", "all" ]
       ]
     }
   ],
   "post-processors": [
     {
       "compression_level": 9,
+      "output": "oi-dev-151a8_{{.Provider}}.box",
       "type": "vagrant"
     }
   ],
