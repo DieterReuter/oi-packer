@@ -5,6 +5,7 @@
 Vagrantfile text eol=lf
 *.sh eol=lf
 *.d eol=lf
+*.tcl eol=lf
 
 # Force CRLF line endings on these files
 *.bat text eol=crlf

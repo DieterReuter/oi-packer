@@ -1,0 +1,7 @@
+Open Printer 194.49.3.130 on port 9100
+
+DATA=start
+@PJL INFO ID
+"LASERJET 4050"
+
+DATA=end
